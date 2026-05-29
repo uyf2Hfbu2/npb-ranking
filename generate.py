@@ -390,15 +390,22 @@ def fetch_json(url):
     return {}
 
 
-TEAM_NAME_MAP = {
-    'ＤｅＮＡ': 'De',  # 順位表のフルネーム（全角）
-    'DeNA': 'De',
-    'Ｄ': 'De',        # ランキングの略称（全角D）
+# 順位表（フルネーム）: 全角ＤｅＮＡ → 半角DeNA
+STANDINGS_TEAM_MAP = {
+    'ＤｅＮＡ': 'DeNA',
+}
+# ランキング略称: 全角Ｄ → De
+RANKING_TEAM_MAP = {
+    'Ｄ': 'De',
 }
 
 
-def norm_team(name):
-    return TEAM_NAME_MAP.get(name, name)
+def norm_standings_team(name):
+    return STANDINGS_TEAM_MAP.get(name, name)
+
+
+def norm_ranking_team(name):
+    return RANKING_TEAM_MAP.get(name, name)
 
 
 def match_id(league):
@@ -412,7 +419,7 @@ def fetch_standings(league):
         return {'update_date': '', 'rows': []}
     rows = [{
         'rank': r.get('ranking', ''),
-        'team': norm_team(r.get('short_name-team', '')),
+        'team': norm_standings_team(r.get('short_name-team', '')),
         'game': r.get('game', ''),
         'win': r.get('win', ''),
         'lose': r.get('lose', ''),
@@ -432,7 +439,7 @@ def fetch_ranking(file_prefix, value_key, league, top_rank=5):
         rank = int(r.get('ranking', 0))
         if rank == 0 or rank > top_rank:
             continue
-        rows.append((rank, r.get('name', '').strip(), norm_team(r.get('team_initial', '').strip()), r.get(value_key, '')))
+        rows.append((rank, r.get('name', '').strip(), norm_ranking_team(r.get('team_initial', '').strip()), r.get(value_key, '')))
     return {'update_date': data.get('update_date', ''), 'rows': rows}
 
 
