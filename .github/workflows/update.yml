@@ -2,10 +2,10 @@ name: Update NPB Rankings
 
 on:
   schedule:
-    # 毎日 8時・14時・20時 JST (= 23時・5時・11時 UTC)
-    - cron: '0 23 * * *'
-    - cron: '0 5 * * *'
-    - cron: '0 11 * * *'
+    # 毎日 0時・6時・18時 JST (= 15時・21時・9時 UTC)
+    - cron: '0 15 * * *'
+    - cron: '0 21 * * *'
+    - cron: '0 9 * * *'
   workflow_dispatch:  # 手動実行も可能
 
 permissions:

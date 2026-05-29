@@ -298,7 +298,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   <div class="grid">__PITCHER_CARDS__</div>
 
   <div class="footer">
-    Source: docomoスポーツ（dメニュースポーツ） / 自動更新: 毎日3回（8時・14時・20時 JST）
+    Source: docomoスポーツ（dメニュースポーツ） / 自動更新: 毎日3回（0時・6時・18時 JST）
   </div>
 
 <script>
