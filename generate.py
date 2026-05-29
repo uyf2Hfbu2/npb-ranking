@@ -232,6 +232,15 @@ def fetch_json(url):
     return {}
 
 
+TEAM_NAME_MAP = {
+    'DeNA': 'De',
+}
+
+
+def norm_team(name):
+    return TEAM_NAME_MAP.get(name, name)
+
+
 def match_id(league):
     return '1' if league.upper() == 'C' else '2'
 
@@ -243,7 +252,7 @@ def fetch_standings(league):
         return {'update_date': '', 'rows': []}
     rows = [{
         'rank': r.get('ranking', ''),
-        'team': r.get('short_name-team', ''),
+        'team': norm_team(r.get('short_name-team', '')),
         'game': r.get('game', ''),
         'win': r.get('win', ''),
         'lose': r.get('lose', ''),
@@ -263,7 +272,7 @@ def fetch_ranking(file_prefix, value_key, league, top_rank=5):
         rank = int(r.get('ranking', 0))
         if rank == 0 or rank > top_rank:
             continue
-        rows.append((rank, r.get('name', '').strip(), r.get('team_initial', '').strip(), r.get(value_key, '')))
+        rows.append((rank, r.get('name', '').strip(), norm_team(r.get('team_initial', '').strip()), r.get(value_key, '')))
     return {'update_date': data.get('update_date', ''), 'rows': rows}
 
 
