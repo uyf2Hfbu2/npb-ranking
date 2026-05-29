@@ -6,7 +6,7 @@
 <title>NPBランキング</title>
 <style>
   body {
-    font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    font-family: 'Inter', 'Hiragino Sans', 'Yu Gothic', sans-serif;
     background: #f7f8fa;
     color: #0a0a0a;
     margin: 0;
@@ -20,10 +20,10 @@
     padding: 36px 28px;
     border-radius: 20px;
   }
-  h1 { font-size: 22px; margin: 0 0 8px; }
-  p { color: #6b7280; font-size: 14px; line-height: 1.6; margin: 0 0 24px; }
-  .links { display: flex; flex-direction: column; gap: 12px; }
-  a {
+  h1 { font-size: 22px; margin: 0 0 8px; font-weight: 700; }
+  .sub { color: #6b7280; font-size: 14px; line-height: 1.6; margin: 0 0 24px; }
+  .links { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+  a.league-btn {
     display: block;
     background: #0a0a0a;
     color: #fff;
@@ -32,20 +32,216 @@
     border-radius: 12px;
     font-weight: 600;
     transition: filter 150ms;
+    font-size: 15px;
   }
-  a:hover { filter: brightness(1.2); }
-  .pa { background: #1DB954; }
-  .se { background: #ff6b35; }
+  a.league-btn:hover { filter: brightness(1.2); }
+  a.league-btn.pa { background: #1DB954; }
+  a.league-btn.se { background: #ff6b35; }
+
+  .divider { border: none; border-top: 1px solid #f0f1f4; margin: 20px 0; }
+
+  .update-row { display: flex; align-items: center; gap: 10px; justify-content: center; }
+  .update-btn {
+    background: #0a0a0a;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 11px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 0.04em;
+    transition: filter 150ms ease;
+  }
+  .update-btn:hover { filter: brightness(1.3); }
+  .update-btn:active { transform: scale(0.97); }
+  .update-btn:disabled { opacity: 0.5; cursor: default; transform: none; }
+  .settings-btn {
+    background: none;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 9px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #6b7280;
+    transition: border-color 150ms;
+    font-family: inherit;
+  }
+  .settings-btn:hover { border-color: #0a0a0a; color: #0a0a0a; }
+  #update-status {
+    font-size: 12px;
+    margin-top: 10px;
+    min-height: 18px;
+    color: #6b7280;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    max-width: 440px;
+    width: calc(100% - 40px);
+  }
+  .modal h2 { margin: 0 0 14px; font-size: 17px; font-weight: 700; }
+  .modal p { font-size: 13px; color: #6b7280; line-height: 1.7; margin: 0 0 4px; }
+  .modal p a { color: #3d5afe; text-decoration: none; }
+  .modal ol { font-size: 13px; color: #6b7280; line-height: 1.9; margin: 8px 0 16px; padding-left: 20px; }
+  .modal ol a { color: #3d5afe; }
+  .token-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1.5px solid #e5e7eb;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin-bottom: 14px;
+    font-family: monospace;
+    outline: none;
+  }
+  .token-input:focus { border-color: #0a0a0a; }
+  .modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+  .btn-cancel {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    background: #f3f4f6;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: inherit;
+  }
+  .btn-save {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    background: #0a0a0a;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: inherit;
+  }
 </style>
 </head>
 <body>
   <div class="container">
     <h1>NPBランキング</h1>
-    <p>リーグを選択してください</p>
+    <p class="sub">リーグを選択してください</p>
     <div class="links">
-      <a href="pa.html" class="pa">パ・リーグ</a>
-      <a href="se.html" class="se">セ・リーグ</a>
+      <a href="pa.html" class="league-btn pa">パ・リーグ</a>
+      <a href="se.html" class="league-btn se">セ・リーグ</a>
+    </div>
+
+    <hr class="divider">
+
+    <div class="update-row">
+      <button id="update-btn" class="update-btn" onclick="triggerUpdate()">↻ 今すぐ更新</button>
+      <button class="settings-btn" onclick="openSettings()" title="トークン設定">⚙</button>
+    </div>
+    <div id="update-status"></div>
+  </div>
+
+  <!-- Token modal -->
+  <div id="token-modal" class="modal-overlay" onclick="overlayClick(event)">
+    <div class="modal">
+      <h2>GitHubトークン設定</h2>
+      <p>更新ボタンを使うには<strong>GitHub Personal Access Token</strong>が必要です。<br>一度設定すればこのデバイスでは保存されます。</p>
+      <ol>
+        <li><a href="https://github.com/settings/personal-access-tokens/new" target="_blank">GitHub → Fine-grained tokens</a> を開く</li>
+        <li>Repository access: <strong>npb-ranking</strong> のみ選択</li>
+        <li>Permissions → Repository permissions → <strong>Actions: Read and write</strong></li>
+        <li>Generate token → コピーして下に貼り付け</li>
+      </ol>
+      <input id="token-input" class="token-input" type="password" placeholder="github_pat_..." autocomplete="off">
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeSettings()">キャンセル</button>
+        <button class="btn-save" onclick="saveToken()">保存</button>
+      </div>
     </div>
   </div>
+
+<script>
+const REPO = 'uyf2Hfbu2/npb-ranking';
+const WORKFLOW = 'update.yml';
+const TOKEN_KEY = 'npb_gh_token';
+
+function getToken() { return localStorage.getItem(TOKEN_KEY) || ''; }
+
+function openSettings() {
+  document.getElementById('token-input').value = getToken();
+  document.getElementById('token-modal').classList.add('open');
+}
+function closeSettings() {
+  document.getElementById('token-modal').classList.remove('open');
+}
+function overlayClick(e) {
+  if (e.target === document.getElementById('token-modal')) closeSettings();
+}
+function saveToken() {
+  const t = document.getElementById('token-input').value.trim();
+  if (t) {
+    localStorage.setItem(TOKEN_KEY, t);
+    closeSettings();
+    setStatus('トークンを保存しました', '#1DB954');
+  }
+}
+
+async function triggerUpdate() {
+  const token = getToken();
+  if (!token) { openSettings(); return; }
+
+  const btn = document.getElementById('update-btn');
+  btn.disabled = true;
+  btn.textContent = '更新中...';
+  setStatus('GitHub Actions を起動しています...', '#6b7280');
+
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ref: 'main' }),
+      }
+    );
+    if (res.status === 204) {
+      setStatus('✅ 更新を開始しました。2〜3分後にページを再読み込みしてください', '#1DB954');
+      setTimeout(() => { btn.disabled = false; btn.textContent = '↻ 今すぐ更新'; }, 10000);
+    } else if (res.status === 401) {
+      setStatus('❌ トークンが無効です。⚙ から再設定してください', '#ef4444');
+      btn.disabled = false; btn.textContent = '↻ 今すぐ更新';
+    } else {
+      const body = await res.json().catch(() => ({}));
+      setStatus(`❌ エラー ${res.status}: ${body.message || ''}`, '#ef4444');
+      btn.disabled = false; btn.textContent = '↻ 今すぐ更新';
+    }
+  } catch (e) {
+    setStatus('❌ ネットワークエラー: ' + e.message, '#ef4444');
+    btn.disabled = false; btn.textContent = '↻ 今すぐ更新';
+  }
+}
+
+function setStatus(msg, color) {
+  const el = document.getElementById('update-status');
+  el.textContent = msg;
+  el.style.color = color || '#6b7280';
+}
+</script>
 </body>
 </html>
