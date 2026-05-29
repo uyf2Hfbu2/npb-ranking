@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPBランキング</title>
+<style>
+  body {
+    font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    background: #f7f8fa;
+    color: #0a0a0a;
+    margin: 0;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 36px 28px;
+    border-radius: 20px;
+  }
+  h1 { font-size: 22px; margin: 0 0 8px; }
+  p { color: #6b7280; font-size: 14px; line-height: 1.6; margin: 0 0 24px; }
+  .links { display: flex; flex-direction: column; gap: 12px; }
+  a {
+    display: block;
+    background: #0a0a0a;
+    color: #fff;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: filter 150ms;
+  }
+  a:hover { filter: brightness(1.2); }
+  .pa { background: #1DB954; }
+  .se { background: #ff6b35; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>NPBランキング</h1>
+    <p>リーグを選択してください</p>
+    <div class="links">
+      <a href="pa.html" class="pa">パ・リーグ</a>
+      <a href="se.html" class="se">セ・リーグ</a>
+    </div>
+  </div>
+</body>
+</html>
