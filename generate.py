@@ -391,7 +391,9 @@ def fetch_json(url):
 
 
 TEAM_NAME_MAP = {
+    'ＤｅＮＡ': 'De',  # 順位表のフルネーム（全角）
     'DeNA': 'De',
+    'Ｄ': 'De',        # ランキングの略称（全角D）
 }
 
 
