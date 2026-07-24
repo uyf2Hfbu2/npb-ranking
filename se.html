@@ -246,7 +246,7 @@
         <button id="update-btn" class="update-btn" onclick="triggerUpdate()">↻ 今すぐ更新</button>
         <button class="settings-btn" onclick="openSettings()" title="トークン設定">⚙</button>
       </div>
-      <div class="updated">最新更新: <strong>2026-07-23 22:11:35</strong></div>
+      <div class="updated">最新更新: <strong>2026-07-24 23:03:17</strong></div>
       <div id="update-status"></div>
     </div>
   </div>
@@ -259,9 +259,9 @@
   
   <div class="standings-card">
     <div class="card-head">
-      <div><div class="card-title">順位表</div><div class="card-update">2026-07-23 22:11</div></div>
+      <div><div class="card-title">順位表</div><div class="card-update">2026-07-24 23:02</div></div>
       <button class="copy-btn" data-tsv="阪神	1
-巨人	2
+巨人	1
 ヤクルト	3
 DeNA	4
 広島	5
@@ -269,7 +269,7 @@ DeNA	4
     </div>
     <table>
       <thead><tr><th>順位</th><th>球団</th><th>試合</th><th>勝</th><th>負</th><th>分</th><th>勝率</th><th>差</th></tr></thead>
-      <tbody><tr><td class="rank">1</td><td class="team">阪神</td><td class="num">88</td><td class="num">49</td><td class="num">38</td><td class="num">1</td><td class="pct">.563</td><td class="gb">-</td></tr><tr><td class="rank">2</td><td class="team">巨人</td><td class="num">89</td><td class="num">48</td><td class="num">39</td><td class="num">2</td><td class="pct">.552</td><td class="gb">1</td></tr><tr><td class="rank">3</td><td class="team">ヤクルト</td><td class="num">89</td><td class="num">42</td><td class="num">46</td><td class="num">1</td><td class="pct">.477</td><td class="gb">7.5</td></tr><tr><td class="rank">4</td><td class="team">DeNA</td><td class="num">89</td><td class="num">38</td><td class="num">48</td><td class="num">3</td><td class="pct">.442</td><td class="gb">10.5</td></tr><tr><td class="rank">5</td><td class="team">広島</td><td class="num">86</td><td class="num">34</td><td class="num">48</td><td class="num">4</td><td class="pct">.415</td><td class="gb">12.5</td></tr><tr><td class="rank">6</td><td class="team">中日</td><td class="num">91</td><td class="num">36</td><td class="num">54</td><td class="num">1</td><td class="pct">.400</td><td class="gb">14.5</td></tr></tbody>
+      <tbody><tr><td class="rank">1</td><td class="team">阪神</td><td class="num">89</td><td class="num">49</td><td class="num">39</td><td class="num">1</td><td class="pct">.557</td><td class="gb">-</td></tr><tr><td class="rank">1</td><td class="team">巨人</td><td class="num">90</td><td class="num">49</td><td class="num">39</td><td class="num">2</td><td class="pct">.557</td><td class="gb">-</td></tr><tr><td class="rank">3</td><td class="team">ヤクルト</td><td class="num">90</td><td class="num">43</td><td class="num">46</td><td class="num">1</td><td class="pct">.483</td><td class="gb">6.5</td></tr><tr><td class="rank">4</td><td class="team">DeNA</td><td class="num">90</td><td class="num">38</td><td class="num">49</td><td class="num">3</td><td class="pct">.437</td><td class="gb">10.5</td></tr><tr><td class="rank">5</td><td class="team">広島</td><td class="num">87</td><td class="num">34</td><td class="num">49</td><td class="num">4</td><td class="pct">.410</td><td class="gb">12.5</td></tr><tr><td class="rank">6</td><td class="team">中日</td><td class="num">92</td><td class="num">37</td><td class="num">54</td><td class="num">1</td><td class="pct">.407</td><td class="gb">13.5</td></tr></tbody>
     </table>
   </div>
 
@@ -277,86 +277,88 @@ DeNA	4
   <div class="grid">
     <div class="card">
       <div class="card-head">
-        <div><div class="card-title">打率</div><div class="card-update">2026-07-23 22:10</div></div>
-        <button class="copy-btn" data-tsv="1	佐藤 輝明	神	.324
+        <div><div class="card-title">打率</div><div class="card-update">2026-07-24 23:02</div></div>
+        <button class="copy-btn" data-tsv="1	佐藤 輝明	神	.323
 2	中野 拓夢	神	.298
 3	森下 翔太	神	.289
-4	浦田 俊輔	巨	.285
+4	浦田 俊輔	巨	.283
 5	度会 隆輝	De	.278" onclick="copyTSV(this)">コピー</button>
       </div>
       <table>
         <thead><tr><th>順位</th><th>選手</th><th>球団</th><th style="text-align:right">値</th></tr></thead>
-        <tbody><tr><td class="rank">1</td><td class="player">佐藤 輝明</td><td class="team">神</td><td class="value">.324</td></tr><tr><td class="rank">2</td><td class="player">中野 拓夢</td><td class="team">神</td><td class="value">.298</td></tr><tr><td class="rank">3</td><td class="player">森下 翔太</td><td class="team">神</td><td class="value">.289</td></tr><tr><td class="rank">4</td><td class="player">浦田 俊輔</td><td class="team">巨</td><td class="value">.285</td></tr><tr><td class="rank">5</td><td class="player">度会 隆輝</td><td class="team">De</td><td class="value">.278</td></tr></tbody>
+        <tbody><tr><td class="rank">1</td><td class="player">佐藤 輝明</td><td class="team">神</td><td class="value">.323</td></tr><tr><td class="rank">2</td><td class="player">中野 拓夢</td><td class="team">神</td><td class="value">.298</td></tr><tr><td class="rank">3</td><td class="player">森下 翔太</td><td class="team">神</td><td class="value">.289</td></tr><tr><td class="rank">4</td><td class="player">浦田 俊輔</td><td class="team">巨</td><td class="value">.283</td></tr><tr><td class="rank">5</td><td class="player">度会 隆輝</td><td class="team">De</td><td class="value">.278</td></tr></tbody>
       </table>
     </div>
     <div class="card">
       <div class="card-head">
-        <div><div class="card-title">本塁打</div><div class="card-update">2026-07-23 22:11</div></div>
+        <div><div class="card-title">本塁打</div><div class="card-update">2026-07-24 23:03</div></div>
         <button class="copy-btn" data-tsv="1	森下 翔太	神	24
 2	佐藤 輝明	神	21
 3	牧 秀悟	De	16
-4	ダルベック	巨	15
-4	サンタナ	ヤ	15" onclick="copyTSV(this)">コピー</button>
+3	ダルベック	巨	16
+5	サンタナ	ヤ	15
+5	細川 成也	中	15" onclick="copyTSV(this)">コピー</button>
       </div>
       <table>
         <thead><tr><th>順位</th><th>選手</th><th>球団</th><th style="text-align:right">値</th></tr></thead>
-        <tbody><tr><td class="rank">1</td><td class="player">森下 翔太</td><td class="team">神</td><td class="value">24</td></tr><tr><td class="rank">2</td><td class="player">佐藤 輝明</td><td class="team">神</td><td class="value">21</td></tr><tr><td class="rank">3</td><td class="player">牧 秀悟</td><td class="team">De</td><td class="value">16</td></tr><tr><td class="rank">4</td><td class="player">ダルベック</td><td class="team">巨</td><td class="value">15</td></tr><tr><td class="rank">4</td><td class="player">サンタナ</td><td class="team">ヤ</td><td class="value">15</td></tr></tbody>
+        <tbody><tr><td class="rank">1</td><td class="player">森下 翔太</td><td class="team">神</td><td class="value">24</td></tr><tr><td class="rank">2</td><td class="player">佐藤 輝明</td><td class="team">神</td><td class="value">21</td></tr><tr><td class="rank">3</td><td class="player">牧 秀悟</td><td class="team">De</td><td class="value">16</td></tr><tr><td class="rank">3</td><td class="player">ダルベック</td><td class="team">巨</td><td class="value">16</td></tr><tr><td class="rank">5</td><td class="player">サンタナ</td><td class="team">ヤ</td><td class="value">15</td></tr><tr><td class="rank">5</td><td class="player">細川 成也</td><td class="team">中</td><td class="value">15</td></tr></tbody>
       </table>
     </div>
     <div class="card">
       <div class="card-head">
-        <div><div class="card-title">打点</div><div class="card-update">2026-07-23 22:11</div></div>
+        <div><div class="card-title">打点</div><div class="card-update">2026-07-24 23:03</div></div>
         <button class="copy-btn" data-tsv="1	佐藤 輝明	神	64
-2	森下 翔太	神	56
-3	大山 悠輔	神	52
-3	ダルベック	巨	52
-5	細川 成也	中	46" onclick="copyTSV(this)">コピー</button>
+2	森下 翔太	神	57
+3	ダルベック	巨	54
+4	大山 悠輔	神	52
+5	坂倉 将吾	広	47
+5	細川 成也	中	47" onclick="copyTSV(this)">コピー</button>
       </div>
       <table>
         <thead><tr><th>順位</th><th>選手</th><th>球団</th><th style="text-align:right">値</th></tr></thead>
-        <tbody><tr><td class="rank">1</td><td class="player">佐藤 輝明</td><td class="team">神</td><td class="value">64</td></tr><tr><td class="rank">2</td><td class="player">森下 翔太</td><td class="team">神</td><td class="value">56</td></tr><tr><td class="rank">3</td><td class="player">大山 悠輔</td><td class="team">神</td><td class="value">52</td></tr><tr><td class="rank">3</td><td class="player">ダルベック</td><td class="team">巨</td><td class="value">52</td></tr><tr><td class="rank">5</td><td class="player">細川 成也</td><td class="team">中</td><td class="value">46</td></tr></tbody>
+        <tbody><tr><td class="rank">1</td><td class="player">佐藤 輝明</td><td class="team">神</td><td class="value">64</td></tr><tr><td class="rank">2</td><td class="player">森下 翔太</td><td class="team">神</td><td class="value">57</td></tr><tr><td class="rank">3</td><td class="player">ダルベック</td><td class="team">巨</td><td class="value">54</td></tr><tr><td class="rank">4</td><td class="player">大山 悠輔</td><td class="team">神</td><td class="value">52</td></tr><tr><td class="rank">5</td><td class="player">坂倉 将吾</td><td class="team">広</td><td class="value">47</td></tr><tr><td class="rank">5</td><td class="player">細川 成也</td><td class="team">中</td><td class="value">47</td></tr></tbody>
       </table>
     </div>
     <div class="card">
       <div class="card-head">
-        <div><div class="card-title">盗塁</div><div class="card-update">2026-07-23 22:11</div></div>
+        <div><div class="card-title">盗塁</div><div class="card-update">2026-07-24 23:02</div></div>
         <button class="copy-btn" data-tsv="1	浦田 俊輔	巨	25
 1	岩田 幸宏	ヤ	25
-3	辰見 鴻之介	広	17
+3	辰見 鴻之介	広	18
 4	松本 剛	巨	12
-5	三森 大貴	De	11" onclick="copyTSV(this)">コピー</button>
+4	三森 大貴	De	12" onclick="copyTSV(this)">コピー</button>
       </div>
       <table>
         <thead><tr><th>順位</th><th>選手</th><th>球団</th><th style="text-align:right">値</th></tr></thead>
-        <tbody><tr><td class="rank">1</td><td class="player">浦田 俊輔</td><td class="team">巨</td><td class="value">25</td></tr><tr><td class="rank">1</td><td class="player">岩田 幸宏</td><td class="team">ヤ</td><td class="value">25</td></tr><tr><td class="rank">3</td><td class="player">辰見 鴻之介</td><td class="team">広</td><td class="value">17</td></tr><tr><td class="rank">4</td><td class="player">松本 剛</td><td class="team">巨</td><td class="value">12</td></tr><tr><td class="rank">5</td><td class="player">三森 大貴</td><td class="team">De</td><td class="value">11</td></tr></tbody>
+        <tbody><tr><td class="rank">1</td><td class="player">浦田 俊輔</td><td class="team">巨</td><td class="value">25</td></tr><tr><td class="rank">1</td><td class="player">岩田 幸宏</td><td class="team">ヤ</td><td class="value">25</td></tr><tr><td class="rank">3</td><td class="player">辰見 鴻之介</td><td class="team">広</td><td class="value">18</td></tr><tr><td class="rank">4</td><td class="player">松本 剛</td><td class="team">巨</td><td class="value">12</td></tr><tr><td class="rank">4</td><td class="player">三森 大貴</td><td class="team">De</td><td class="value">12</td></tr></tbody>
       </table>
     </div>
     <div class="card">
       <div class="card-head">
-        <div><div class="card-title">得点圏打率</div><div class="card-update">2026-07-23 22:11</div></div>
-        <button class="copy-btn" data-tsv="1	佐藤 輝明	神	.382
-2	坂倉 将吾	広	.310
-3	度会 隆輝	De	.300
-4	ダルベック	巨	.298
-5	佐野 恵太	De	.297" onclick="copyTSV(this)">コピー</button>
+        <div><div class="card-title">得点圏打率</div><div class="card-update">2026-07-24 23:03</div></div>
+        <button class="copy-btn" data-tsv="1	佐藤 輝明	神	.372
+2	坂倉 将吾	広	.324
+3	ダルベック	巨	.306
+4	度会 隆輝	De	.300
+5	佐野 恵太	De	.2933" onclick="copyTSV(this)">コピー</button>
       </div>
       <table>
         <thead><tr><th>順位</th><th>選手</th><th>球団</th><th style="text-align:right">値</th></tr></thead>
-        <tbody><tr><td class="rank">1</td><td class="player">佐藤 輝明</td><td class="team">神</td><td class="value">.382</td></tr><tr><td class="rank">2</td><td class="player">坂倉 将吾</td><td class="team">広</td><td class="value">.310</td></tr><tr><td class="rank">3</td><td class="player">度会 隆輝</td><td class="team">De</td><td class="value">.300</td></tr><tr><td class="rank">4</td><td class="player">ダルベック</td><td class="team">巨</td><td class="value">.298</td></tr><tr><td class="rank">5</td><td class="player">佐野 恵太</td><td class="team">De</td><td class="value">.297</td></tr></tbody>
+        <tbody><tr><td class="rank">1</td><td class="player">佐藤 輝明</td><td class="team">神</td><td class="value">.372</td></tr><tr><td class="rank">2</td><td class="player">坂倉 将吾</td><td class="team">広</td><td class="value">.324</td></tr><tr><td class="rank">3</td><td class="player">ダルベック</td><td class="team">巨</td><td class="value">.306</td></tr><tr><td class="rank">4</td><td class="player">度会 隆輝</td><td class="team">De</td><td class="value">.300</td></tr><tr><td class="rank">5</td><td class="player">佐野 恵太</td><td class="team">De</td><td class="value">.2933</td></tr></tbody>
       </table>
     </div>
     <div class="card">
       <div class="card-head">
-        <div><div class="card-title">三振</div><div class="card-update">2026-07-23 22:10</div></div>
-        <button class="copy-btn" data-tsv="1	ダルベック	巨	109
-2	キャベッジ	巨	104
+        <div><div class="card-title">三振</div><div class="card-update">2026-07-24 23:02</div></div>
+        <button class="copy-btn" data-tsv="1	ダルベック	巨	111
+2	キャベッジ	巨	105
 3	細川 成也	中	102
-4	佐藤 輝明	神	96
-5	サンタナ	ヤ	80" onclick="copyTSV(this)">コピー</button>
+4	佐藤 輝明	神	98
+5	サンタナ	ヤ	82" onclick="copyTSV(this)">コピー</button>
       </div>
       <table>
         <thead><tr><th>順位</th><th>選手</th><th>球団</th><th style="text-align:right">値</th></tr></thead>
-        <tbody><tr><td class="rank">1</td><td class="player">ダルベック</td><td class="team">巨</td><td class="value">109</td></tr><tr><td class="rank">2</td><td class="player">キャベッジ</td><td class="team">巨</td><td class="value">104</td></tr><tr><td class="rank">3</td><td class="player">細川 成也</td><td class="team">中</td><td class="value">102</td></tr><tr><td class="rank">4</td><td class="player">佐藤 輝明</td><td class="team">神</td><td class="value">96</td></tr><tr><td class="rank">5</td><td class="player">サンタナ</td><td class="team">ヤ</td><td class="value">80</td></tr></tbody>
+        <tbody><tr><td class="rank">1</td><td class="player">ダルベック</td><td class="team">巨</td><td class="value">111</td></tr><tr><td class="rank">2</td><td class="player">キャベッジ</td><td class="team">巨</td><td class="value">105</td></tr><tr><td class="rank">3</td><td class="player">細川 成也</td><td class="team">中</td><td class="value">102</td></tr><tr><td class="rank">4</td><td class="player">佐藤 輝明</td><td class="team">神</td><td class="value">98</td></tr><tr><td class="rank">5</td><td class="player">サンタナ</td><td class="team">ヤ</td><td class="value">82</td></tr></tbody>
       </table>
     </div></div>
 
@@ -364,7 +366,7 @@ DeNA	4
   <div class="grid">
     <div class="card">
       <div class="card-head">
-        <div><div class="card-title">防御率</div><div class="card-update">2026-07-23 22:10</div></div>
+        <div><div class="card-title">防御率</div><div class="card-update">2026-07-24 23:02</div></div>
         <button class="copy-btn" data-tsv="1	高橋 遥人	神	1.70
 2	大野 雄大	中	1.82
 3	村上 頌樹	神	2.03
@@ -378,7 +380,7 @@ DeNA	4
     </div>
     <div class="card">
       <div class="card-head">
-        <div><div class="card-title">勝利</div><div class="card-update">2026-07-23 22:10</div></div>
+        <div><div class="card-title">勝利</div><div class="card-update">2026-07-24 23:02</div></div>
         <button class="copy-btn" data-tsv="1	高橋 遥人	神	11
 2	井上 温大	巨	9
 3	山野 太一	ヤ	8
@@ -394,21 +396,21 @@ DeNA	4
     </div><div class="card"><div class="card-head"><div><div class="card-title">勝率</div></div></div><div class="empty">セ・リーグでは勝率を使用しません</div></div>
     <div class="card">
       <div class="card-head">
-        <div><div class="card-title">奪三振</div><div class="card-update">2026-07-23 22:10</div></div>
-        <button class="copy-btn" data-tsv="1	才木 浩人	神	120
+        <div><div class="card-title">奪三振</div><div class="card-update">2026-07-24 23:02</div></div>
+        <button class="copy-btn" data-tsv="1	才木 浩人	神	133
 2	高橋 遥人	神	107
 3	村上 頌樹	神	98
-4	井上 温大	巨	95
-5	山野 太一	ヤ	93" onclick="copyTSV(this)">コピー</button>
+4	ウィットリー	巨	97
+5	井上 温大	巨	95" onclick="copyTSV(this)">コピー</button>
       </div>
       <table>
         <thead><tr><th>順位</th><th>選手</th><th>球団</th><th style="text-align:right">値</th></tr></thead>
-        <tbody><tr><td class="rank">1</td><td class="player">才木 浩人</td><td class="team">神</td><td class="value">120</td></tr><tr><td class="rank">2</td><td class="player">高橋 遥人</td><td class="team">神</td><td class="value">107</td></tr><tr><td class="rank">3</td><td class="player">村上 頌樹</td><td class="team">神</td><td class="value">98</td></tr><tr><td class="rank">4</td><td class="player">井上 温大</td><td class="team">巨</td><td class="value">95</td></tr><tr><td class="rank">5</td><td class="player">山野 太一</td><td class="team">ヤ</td><td class="value">93</td></tr></tbody>
+        <tbody><tr><td class="rank">1</td><td class="player">才木 浩人</td><td class="team">神</td><td class="value">133</td></tr><tr><td class="rank">2</td><td class="player">高橋 遥人</td><td class="team">神</td><td class="value">107</td></tr><tr><td class="rank">3</td><td class="player">村上 頌樹</td><td class="team">神</td><td class="value">98</td></tr><tr><td class="rank">4</td><td class="player">ウィットリー</td><td class="team">巨</td><td class="value">97</td></tr><tr><td class="rank">5</td><td class="player">井上 温大</td><td class="team">巨</td><td class="value">95</td></tr></tbody>
       </table>
     </div>
     <div class="card">
       <div class="card-head">
-        <div><div class="card-title">セーブ</div><div class="card-update">2026-07-23 22:11</div></div>
+        <div><div class="card-title">セーブ</div><div class="card-update">2026-07-24 23:02</div></div>
         <button class="copy-btn" data-tsv="1	マルティネス	巨	29
 2	キハダ	ヤ	21
 3	松山 晋也	中	18
